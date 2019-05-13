@@ -60,11 +60,8 @@ public class BlogGenerator {
 
         Post newPost = new Post();
         newPost.setUser(user);
-        System.out.println("Please select a user from the list below.");
+        System.out.println("Please begin typing you blog post below:");
         newPost.setPostContent(keyboard.nextLine());
-
-        //System.out.println("What is your username?");
-        //user.setUserName(keyboard.nextLine());
         return newPost;
     }
 
