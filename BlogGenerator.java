@@ -13,18 +13,20 @@ public class BlogGenerator {
         this.keyboard = new Scanner(System.in);
     }// does not take in any parameters, creates a new keyboard for each instances
 
-    public Post generatePost(){
+    public Post generatePost() {
         User user = createUser();
         String validate;
         Post newPost;
-        do{
+        do {
             newPost = createPost(user);
-            System.out.println("\n" + newPost.toStringPost() + "\n");
+            System.out.print("\n" + newPost.toStringPost() + "\n");
             System.out.println("Is this correct? (Enter \"y\" for yes)");
             validate = keyboard.nextLine();
-        }while(!validate.toLowerCase().equals("y"));
+        } while (!validate.toLowerCase().equals("y"));
         return newPost;
     }
+
+
 
     public User generateUser() {
         User newUser = createUser();
@@ -33,7 +35,7 @@ public class BlogGenerator {
             System.out.println("\n" + newUser.toString() + "\n");
             System.out.println("Is this correct?(Enter \"y\" for yes)");
             validate = keyboard.nextLine();
-        }while(!validate.toLowerCase().equals("y"));
+        } while (!validate.toLowerCase().equals("y"));
         return newUser;
     }
 
@@ -54,36 +56,23 @@ public class BlogGenerator {
     }
 
 
+    public Post createPost(User user) {
 
-    private Post createPost(User user){
         Post newPost = new Post();
-        System.out.println("Please begin typing your the body of your blog post below this line.");
+        newPost.setUser(user);
+        System.out.println("Please select a user from the list below.");
         newPost.setPostContent(keyboard.nextLine());
+
+        //System.out.println("What is your username?");
+        //user.setUserName(keyboard.nextLine());
         return newPost;
-
     }
 
 
 
 
 
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    // end class BlogGenerator
+}// end class BlogGenerator
 
 
 

@@ -39,6 +39,7 @@ public class Post {
         this.id = postIdCounter;
     }
 
+
     //Getter to return the post id
     public int getId() {
         return this.id;
@@ -50,6 +51,10 @@ public class Post {
 
     public void setPostContent(String content) { this.content = content;}
 
+    public String getUser() {return user.getUserName();}
+
+    public void setUser(User user) {this.user = user;}
+
 
 
 
@@ -58,7 +63,7 @@ public class Post {
     public String toStringPost() {
         return "Post number: " + this.id + "\n" +
                 this.content + "\n" +
-                //"Written by: " + this.user.getUserName() + "\n" +
+                "Written by: " + user.getUserName() + "\n" +
                 //The expression below checks if the url
                 //field is null. If not, it displays the url.
                 //If it is, it just displays an empty string
